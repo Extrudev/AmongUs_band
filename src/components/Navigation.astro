@@ -4,29 +4,93 @@
             <a
                 href="https://amongusband.bandcamp.com/"
                 target="_blank"
-                rel="noopener noreferrer">Bandcamp</a
+                rel="noopener noreferrer"
             >
+                <img
+                    class="indicator"
+                    src="/AU_logo.png"
+                    alt=""
+                    width="30"
+                    height="30"
+                />
+                Bandcamp
+                <img
+                    class="indicator"
+                    src="/AU_logo.png"
+                    alt=""
+                    width="30"
+                    height="30"
+                />
+            </a>
         </li>
         <li>
             <a
                 href="https://www.youtube.com/@AmongUsBand"
                 target="_blank"
-                rel="noopener noreferrer">Youtube</a
+                rel="noopener noreferrer"
             >
+                <img
+                    class="indicator"
+                    src="/AU_logo.png"
+                    alt=""
+                    width="30"
+                    height="30"
+                />
+                Youtube
+                <img
+                    class="indicator"
+                    src="/AU_logo.png"
+                    alt=""
+                    width="30"
+                    height="30"
+                />
+            </a>
         </li>
         <li>
             <a
                 href="https://open.spotify.com/intl-es/artist/1U6PIKrxuh0Ixav66KCeMi?si=_riudrK-SCO8wxi6dGN2mg"
                 target="_blank"
-                rel="noopener noreferrer">Spotify</a
+                rel="noopener noreferrer"
             >
+                <img
+                    class="indicator"
+                    src="/AU_logo.png"
+                    alt=""
+                    width="30"
+                    height="30"
+                />
+                Spotify
+                <img
+                    class="indicator"
+                    src="/AU_logo.png"
+                    alt=""
+                    width="30"
+                    height="30"
+                />
+            </a>
         </li>
         <li>
             <a
                 href="https://www.instagram.com/among.us.the.band"
                 target="_blank"
-                rel="noopener noreferrer">Instagram</a
+                rel="noopener noreferrer"
             >
+                <img
+                    class="indicator"
+                    src="/AU_logo.png"
+                    alt=""
+                    width="30"
+                    height="30"
+                />
+                Instagram
+                <img
+                    class="indicator"
+                    src="/AU_logo.png"
+                    alt=""
+                    width="30"
+                    height="30"
+                />
+            </a>
         </li>
     </ul>
 </nav>
@@ -50,11 +114,45 @@
     }
 
     a {
-        transition: 0.2s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+        transition: color 0.2s ease;
     }
 
-    a:hover {
+    a:hover,
+    a:focus-visible {
         color: brown;
+    }
+
+    /* --- Favicon indicators --- */
+    .indicator {
+        display: none;
+        width: 40px !important;
+        height: 40px !important;
+        object-fit: contain;
+        opacity: 0;
+        transition:
+            opacity 0.25s ease,
+            filter 0.2s ease;
+    }
+
+    @media (min-width: 769px) {
+        .indicator {
+            display: block;
+        }
+
+        /* show on first link (Bandcamp) when nothing is hovered */
+        ul:not(:hover) li:first-child .indicator {
+            opacity: 1;
+        }
+
+        /* On hover/focus: show on that specific link */
+        a:hover .indicator,
+        a:focus-visible .indicator {
+            opacity: 1;
+        }
     }
 
     @media (max-width: 800px) {
